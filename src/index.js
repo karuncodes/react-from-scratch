@@ -1,4 +1,3 @@
-import { hello, goodbye } from "./lib";
 import React from 'react'
 import { render } from 'react-dom'
 import { SkiDayCount } from './components/SkiDayCount'
