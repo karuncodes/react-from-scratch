@@ -37,3 +37,12 @@ export const SkiDayCount = ({ total, powder, backcountry, goal}) => (
         </div>
     </div>
 )
+
+// whenever class initialize: instance created with below default props.
+
+SkiDayCount.defaultProps = {
+    total: 69,
+    powder: 12,
+    backcountry: 23,
+    goal: 15
+}
