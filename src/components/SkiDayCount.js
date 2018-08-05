@@ -13,7 +13,7 @@ const calcGoalProgress = (total, goal) => {
 }
 
 
-export const SkiDayCount = ({ total, powder, backcountry, goal}) => (
+export const SkiDayCount = ({ total = 70, powder = 10 , backcountry =15 , goal= 100}) => (
     <div className="ski-day-count">
         <div className="total-days">
             <span>{total}</span>
@@ -40,9 +40,9 @@ export const SkiDayCount = ({ total, powder, backcountry, goal}) => (
 
 // whenever class initialize: instance created with below default props.
 
-SkiDayCount.defaultProps = {
-    total: 69,
-    powder: 12,
-    backcountry: 23,
-    goal: 15
-}
+// SkiDayCount.defaultProps = {
+//     total: 69,
+//     powder: 12,
+//     backcountry: 23,
+//     goal: 15
+// }
