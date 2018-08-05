@@ -1,14 +1,33 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { SkiDayCount } from './components/SkiDayCount'
+// import { SkiDayCount } from './components/SkiDayCount'
+import { SkiDayList } from './components/SkiDayList'
 
 window.React = React
 
 render(
-    <SkiDayCount total={50}
-        powder={20}
-        backcountry={10}
-        goal={5} />,
+    <SkiDayList days={
+        [
+            {
+                resort: "hotel transylvania",
+                date: new Date("3/2/2018"),
+                powder: true,
+                backcountry: false
+            },
+            {
+                resort: "hotel kirkwood",
+                date: new Date("4/12/2018"),
+                powder: false,
+                backcountry: false
+            },
+            {
+                resort: "hotel transylvania",
+                date: new Date("6/1/2018"),
+                powder: true,
+                backcountry: true
+            }
+        ]
+    } />,
     document.getElementById("init-elem")
 );
 
