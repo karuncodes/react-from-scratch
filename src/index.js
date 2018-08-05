@@ -5,8 +5,10 @@ import { SkiDayCount } from './components/SkiDayCount'
 
 window.React = React
 
+// passing props while using component removes 'PropTypes' validation warnings 
+
 render (
-    <SkiDayCount />,
+    <SkiDayCount total={80} goal={150} />,
     document.getElementById("init-elem")
 )
 // render(
