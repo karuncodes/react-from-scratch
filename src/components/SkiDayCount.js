@@ -1,7 +1,11 @@
-import { Component } from 'react'
 import  { FaCalendar as Cal }  from 'react-icons/fa'
 import  { MdTerrain as Pahaad }  from 'react-icons/md'
 import  { TiWeatherSnow as SnowFlake }  from 'react-icons/ti'
+import  { PropTypes } from 'prop-types'
+
+// NOTICE: i have added validation using proptypes but still,
+// I will receive isRequired warnings even though I have default values
+// that means: using component this props need to be passesd
 
 
 const percentToDecimal = decimal => {
@@ -37,6 +41,15 @@ export const SkiDayCount = ({ total = 70, powder = 10 , backcountry =15 , goal= 
         </div>
     </div>
 )
+
+// Adding Validation using PropTypes
+
+SkiDayCount.propTypes = {
+    total: PropTypes.number.isRequired,
+    backcountry: PropTypes.number,
+    powder: PropTypes.number,
+    goal: PropTypes.number.isRequired
+}
 
 // whenever class initialize: instance created with below default props.
 
