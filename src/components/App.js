@@ -6,7 +6,24 @@ export class App extends Component {
         super(props);
         this.state = {
             allSkiDays: [
-                {}
+                {
+                    resort: "Mt Everest",
+                    date: new Date("3/2/2018"),
+                    powder: true,
+                    backcountry: false
+                },
+                {
+                    resort: "hotel kirkwood",
+                    date: new Date("4/12/2018"),
+                    powder: false,
+                    backcountry: false
+                },
+                {
+                    resort: "hotel transylvania",
+                    date: new Date("6/1/2018"),
+                    powder: true,
+                    backcountry: true
+                }
             ]
         }
     }
