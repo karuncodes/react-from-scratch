@@ -27,9 +27,18 @@ export class App extends Component {
             ]
         }
     }
+
+    countDays (filter) {
+        const { allSkiDays } = this.state
+        return allSkiDays.filter(
+            (day) => (filter) ? day[filter] : day ).length
+    }
+
     render() {
         return (<Fragment>
-                    <SkiDayCount total={20} goal={50} />
+                    <SkiDayCount total={this.countDays()} 
+                                powder={this.countDays("powder")}
+                                backcountry={this.countDays("backcountry")} />
                     <SkiDayList days={this.state.allSkiDays} />
                 </Fragment>)
 
