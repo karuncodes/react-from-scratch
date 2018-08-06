@@ -1,7 +1,6 @@
-import  { FaCalendar as Cal }  from 'react-icons/fa'
-import  { MdTerrain as Pahaad }  from 'react-icons/md'
-import  { TiWeatherSnow as SnowFlake }  from 'react-icons/ti'
 import { SkiDayRow } from './SkiDayRow';
+import { PropTypes } from 'prop-types'
+
 
 export const SkiDayList = ({days}) => (
     <table style={{border: '1px solid black'}}>
@@ -15,7 +14,6 @@ export const SkiDayList = ({days}) => (
         </thead>
         <tbody>
             {days.map((day, i ) => {
-                console.log("day");
                 return (<SkiDayRow key={i}
                             {...day} />)
             })}
@@ -23,3 +21,21 @@ export const SkiDayList = ({days}) => (
     </table>
 
 )
+
+SkiDayList.propTypes = {
+    days: function(props) {
+        if(!Array.isArray(props.days)) {
+            return new Error(
+                "SkiDayList should be an array"
+            )
+        }
+        else if (!props.days.length) {
+            return new Error(
+                "SkiDayList must have atleast one record"
+            )
+        }
+        else {
+            return null
+        }
+    }
+}
