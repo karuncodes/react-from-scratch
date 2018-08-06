@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import { SkiDayCount } from './components/SkiDayCount'
-import { SkiDayList } from './components/SkiDayList'
+import { App } from './components/App'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 window.React = React
 
 render(
-    <SkiDayList days="lots" />,
+    <ErrorBoundary><App /></ErrorBoundary>,
     document.getElementById("init-elem")
 );
 
