@@ -41,10 +41,15 @@ export class App extends Component {
 // when you link to -> days, it displays all three components as  routes ("/" and "/days" and no path) are matching
 // basically here all routes are rendering i.e. if path doesnt match Route returns null 
 
+//Added <Switch> to render only first match found with browser url
+//Notice it always shows SkiDayCount with path="/" even though the location url is changing
+//thats because Switch renders first child which matches location and in this case "/" alsways matches
+
+
     render() {
         return <Router>
                 <div>
-                    
+                    <Switch>
                         <Route  path="/" render={props => (
                             <Fragment>
                                 <SkiDayCount total= {25} />
@@ -56,7 +61,7 @@ export class App extends Component {
                             </Fragment>
                         )} />
                         <Route component={Whoops404} />
-                    
+                    </Switch>
                     <div>
                     <ul>
                         <li>
