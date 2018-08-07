@@ -46,11 +46,16 @@ export class App extends Component {
 //thats because Switch renders first child which matches location and in this case "/" alsways matches
 
 
+//Using exact makes the rendering of correct component here 
+// CAUTION: As i have "/days" and i add another route "/days/jan"
+// this will again have the error of first match component been rendered always. 
+// So 'exact' might resolve that issue
+
     render() {
         return <Router>
                 <div>
                     <Switch>
-                        <Route  path="/" render={props => (
+                        <Route exact path="/" render={props => (
                             <Fragment>
                                 <SkiDayCount total= {25} />
                             </Fragment>
