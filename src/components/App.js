@@ -31,30 +31,27 @@ export class App extends Component {
         }
     }
 
-    countDays (filter) {
-        const { allSkiDays } = this.state
-        return allSkiDays.filter(
-            (day) => (filter) ? day[filter] : day ).length
-    }
+    // countDays (filter) {
+    //     const { allSkiDays } = this.state
+    //     return allSkiDays.filter(
+    //         (day) => (filter) ? day[filter] : day ).length
+    // }
 
     render() {
-        return <Router>
-                <div>
+        return  <Fragment>
                     <Switch>
                         <Route exact path="/" render={props => (
-                            <Fragment>
                                 <SkiDayCount total= {25} />
-                            </Fragment>
                         )} />
-                        <Route path="/list-days" render={props => (
-                            <Fragment>
-                                <SkiDayList days={this.state.allSkiDays} />
-                            </Fragment>
+                        <Route exact path="/list-days" render={props => (
+                                <SkiDayList days={this.state.allSkiDays}/>
+                        )} />
+                        <Route path="/list-days/:filter" render={({match}) => (
+                                <SkiDayList days={this.state.allSkiDays} filter={match.params.filter}/>
                         )} />
                         <Route component={Whoops404} />
                     </Switch>
                     <NavigationMenu />
-                </div>
-            </Router>
+                </Fragment>
     }
 }
