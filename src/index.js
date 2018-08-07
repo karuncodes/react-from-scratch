@@ -7,13 +7,10 @@ import { HashRouter as Router } from 'react-router-dom'
 window.React = React
 
 render(
-    <ErrorBoundary>
-        <Router>
-            <div>
-                <App />
-            </div>
-        </Router>
-    </ErrorBoundary>,
+    <Router>
+        <ErrorBoundary>
+            <App />
+        </ErrorBoundary>
+    </Router>,
     document.getElementById("init-elem")
 );
-

@@ -19,6 +19,9 @@ export const SkiDayList = ({days, filter}) => {
         <tbody>
             <tr>
                 <td>
+                    <span> Filters -> </span>
+                </td>
+                <td>
                     <Link to="/list-days">
                         All Days
                     </Link>
