@@ -4,6 +4,7 @@ import  {
     FaHome as Home,
     FaTimesCircle as NotFound
 }  from 'react-icons/fa'
+import '../stylesheets/ui.scss'
 
 export const NavigationMenu = () => {
     const style={
@@ -12,7 +13,7 @@ export const NavigationMenu = () => {
     return <nav>
         <ul>
             <li>
-                <NavLink exact to="/" activeStyle={style}>
+                <NavLink exact to="/" className="highlighted" >
                     <Home />
                     SkiDayCount
                 </NavLink>
@@ -24,9 +25,8 @@ export const NavigationMenu = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/boo" activeStyle={style}>
-                    <NotFound />
-                    404
+                <NavLink to="/add-day" activeStyle={style}>
+                    add day form
                 </NavLink>
             </li>
         </ul>
