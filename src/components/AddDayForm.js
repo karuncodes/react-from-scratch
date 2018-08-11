@@ -5,16 +5,21 @@ let resortInputElement,
     powderInputElement,
     backcountryInputElement;
 
-const submit = (e) => {
-    e.preventDefault();
-    console.log("this.resortInputElement",resortInputElement.value);
-    console.log("this.dateInputElement",dateInputElement.value);
-    console.log("this.powderInputElement",powderInputElement.checked);
-    console.log("this.backcountryInputElement",backcountryInputElement.checked);
-}
+export const AddDayForm = ({ resort, date, powder, backcountry, onNewDay }) => {
 
-
-export const AddDayForm = ({ resort, date, powder, backcountry }) => {
+    const submit = (e) => {
+        e.preventDefault();
+        onNewDay({
+            resort: resortInputElement.value,
+            date: dateInputElement.value,
+            powder: powderInputElement.checked,
+            backcountry: backcountryInputElement.checked
+        });
+        resortInputElement.value = '';
+        dateInputElement.value = '';
+        powderInputElement.checked = false;
+        backcountryInputElement.checked = false;
+    }
 
     return (<form className="add-day-form" onSubmit={submit}>
                 <label htmlFor="resort"> Resort Name</label>
@@ -43,7 +48,6 @@ export const AddDayForm = ({ resort, date, powder, backcountry }) => {
                 <button type="submit">Submit</button>
             </form>)
 };
-
 
 AddDayForm.defaultProps = {
     resort: "Hotel california",

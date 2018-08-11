@@ -1,5 +1,4 @@
 import { SkiDayRow } from './SkiDayRow';
-import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
 
 export const SkiDayList = ({days, filter}) => {

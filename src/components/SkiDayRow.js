@@ -1,4 +1,3 @@
-import  { FaCalendar as Cal }  from 'react-icons/fa'
 import  { MdTerrain as Pahaad }  from 'react-icons/md'
 import  { TiWeatherSnow as SnowFlake }  from 'react-icons/ti'
 import { PropTypes } from 'prop-types'
@@ -6,7 +5,7 @@ import { PropTypes } from 'prop-types'
 export const SkiDayRow = ({resort, date, powder, backcountry}) => (
 <tr>
     <td>
-        {date.getMonth()+1 }/{date.getDate()}/{date.getFullYear()}
+        {date}
     </td>
     <td>
         {resort}
@@ -22,7 +21,7 @@ export const SkiDayRow = ({resort, date, powder, backcountry}) => (
 
 SkiDayRow.propTypes = {
     resort: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
+    date: PropTypes.string.isRequired,
     powder: PropTypes.bool,
     backcountry: PropTypes.bool
 }
