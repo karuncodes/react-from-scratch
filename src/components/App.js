@@ -20,7 +20,7 @@ export class App  extends Component {
             member: {
                 admin: true,
                 name: "Sal Pal Aal",
-                thumbnail: "img.jpg",
+                thumbnail: "https://avatars0.githubusercontent.com/u/13069255",
                 email: "karun.developer@gmail.com"
             }
         }
