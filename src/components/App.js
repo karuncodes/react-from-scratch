@@ -1,6 +1,7 @@
 import { Fragment, Component } from 'react'
 import { SkiDayCount } from './SkiDayCount'
 import { AllSkiDays } from './AllSkiDays'
+import { Member } from './Member'
 import { Whoops404 } from './Whoops404'
 import { NavigationMenu } from './NavigationMenu'
 import { Route, Switch } from 'react-router-dom'
@@ -15,7 +16,13 @@ export class App  extends Component {
                 date: "2010-03-12",
                 powder: true,
                 backcountry: true
-            }]
+            }],
+            member: {
+                admin: true,
+                name: "Sal Pal Aal",
+                thumbnail: "img.jpg",
+                email: "karun.developer@gmail.com"
+            }
         }
         this.addDay = this.addDay.bind(this);
     }
@@ -46,6 +53,9 @@ export class App  extends Component {
                 <Route exact path="/add-day" render={props => (
                         <AddDayForm onNewDay={this.addDay} />
                     )} />
+                <Route path="/show-members" render={props => (
+                        <Member member={this.state.member} />
+                )} />
                 <Route component={Whoops404} />
             </Switch>
         </Fragment>)
