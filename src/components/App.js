@@ -53,25 +53,3 @@ export class App  extends Component {
         </Fragment>)
     }
 }
-
-            // members: [{
-            //     admin: true,
-            //     name: "SalPal",
-            //     thumbnail: "https://avatars1.githubusercontent.com/u/13069255",
-            //     email: "karun.developer@gmail.com",
-            //     makeAdmin: function() { console.log("user hit", this.name) }
-            // },
-            // {
-            //     admin: false,
-            //     name: "Eve Porcello",
-            //     thumbnail: "https://avatars1.githubusercontent.com/u/4429852",
-            //     email: "eve@moonhighway.com",
-            //     makeAdmin: () => { console.log("user hit", this.name) }
-            // },
-            // {
-            //     admin: false,
-            //     name: "Alex Banks",
-            //     thumbnail: "https://avatars3.githubusercontent.com/u/5952082",
-            //     email: "alex@moonhighway.com",
-            //     makeAdmin: () => { console.log("user hit", this.name) }
-            // }]

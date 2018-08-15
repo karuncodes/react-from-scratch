@@ -2,7 +2,7 @@ import  { FaCalendar as Cal }  from 'react-icons/fa'
 import  { MdTerrain as Pahaad }  from 'react-icons/md'
 import  { TiWeatherSnow as SnowFlake }  from 'react-icons/ti'
 import  { PropTypes } from 'prop-types'
-
+import KK from '../static/images/kk.jpg'
 // NOTICE: i have added validation using proptypes but still,
 // I will receive isRequired warnings even though I have default values
 // that means: using component this props need to be passesd
@@ -39,6 +39,13 @@ export const SkiDayCount = ({ total = 70, powder = 10 , backcountry =15 , goal= 
                 {calcGoalProgress(total, goal)}
             </span>
         </div>
+        <footer>
+        <br /><br /><br /><br /><br />
+            <span>Copyright 2018 - Karun</span>
+            <div><img style={{
+                width: '80px'
+            }} src={KK} /></div>
+        </footer>
     </div>
 )
 

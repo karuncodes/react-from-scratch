@@ -26,6 +26,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: "style-loader!css-loader!postcss-loader?browsers=last 2 versions!sass-loader"
+            },
+            {
+                test: /\.(png|jpeg|jpg)$/,
+                loader: "file-loader"
             }
         ]
     }
