@@ -1,14 +1,14 @@
 import  { FaShieldAlt }  from 'react-icons/fa'
 
-// function handleClick(props){
-//     console.log("yea did it",props);
-// }
-export const Member = ({member, makeAdmin}) => (<div>
-    <h1>{member.name} {(member.admin)? <FaShieldAlt /> : "" } </h1>
-    <img style={{"width": '80px',
-                 "height": '80px'}}
-         src={member.thumbnail} />
-    <div> email: <a href={`mailto:${member.email}`}>{member.email}</a></div>
-    <button onClick={makeAdmin}>Make Admin</button>
+export const Member = ({admin, name, image, email, makeAdmin, removeAdmin}) => (<div>
+    <h1>{name} {(admin)? <FaShieldAlt /> :''}</h1>
+    <img src={image} alt="profile picture" />
+    <div> email: <a href={`mailto:${email}`}>{email}</a></div>
+    {
+        (!admin)?
+        <a onClick={() => makeAdmin(email)}> Make Admin </a> :
+        <a onClick={() => removeAdmin(email)}> Remove Admin </a>
+
+    }
     </div>
 )
