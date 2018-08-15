@@ -29,6 +29,11 @@ export const NavigationMenu = () => {
                     add day form
                 </NavLink>
             </li>
+            <li>
+                <NavLink to="/show-members" activeStyle={style}>
+                    show members
+                </NavLink>
+            </li>
         </ul>
     </nav>
 }

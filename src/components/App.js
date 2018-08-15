@@ -1,7 +1,7 @@
 import { Fragment, Component } from 'react'
 import { SkiDayCount } from './SkiDayCount'
 import { AllSkiDays } from './AllSkiDays'
-import { Member } from './Member'
+import { MemberList } from './MemberList'
 import { Whoops404 } from './Whoops404'
 import { NavigationMenu } from './NavigationMenu'
 import { Route, Switch } from 'react-router-dom'
@@ -17,12 +17,27 @@ export class App  extends Component {
                 powder: true,
                 backcountry: true
             }],
-            member: {
+            members: [{
                 admin: true,
-                name: "Sal Pal Aal",
-                thumbnail: "https://avatars0.githubusercontent.com/u/13069255",
-                email: "karun.developer@gmail.com"
-            }
+                name: "SalPal",
+                thumbnail: "https://avatars1.githubusercontent.com/u/13069255",
+                email: "karun.developer@gmail.com",
+                makeAdmin: function() { console.log("user hit", this.name) }
+            },
+            {
+                admin: false,
+                name: "Eve Porcello",
+                thumbnail: "https://avatars1.githubusercontent.com/u/4429852",
+                email: "eve@moonhighway.com",
+                makeAdmin: () => { console.log("user hit", this.name) }
+            },
+            {
+                admin: false,
+                name: "Alex Banks",
+                thumbnail: "https://avatars3.githubusercontent.com/u/5952082",
+                email: "alex@moonhighway.com",
+                makeAdmin: () => { console.log("user hit", this.name) }
+            }]
         }
         this.addDay = this.addDay.bind(this);
     }
@@ -54,7 +69,7 @@ export class App  extends Component {
                         <AddDayForm onNewDay={this.addDay} />
                     )} />
                 <Route path="/show-members" render={props => (
-                        <Member member={this.state.member} />
+                        <MemberList members={this.state.members} />
                 )} />
                 <Route component={Whoops404} />
             </Switch>
