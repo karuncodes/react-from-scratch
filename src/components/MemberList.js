@@ -12,6 +12,8 @@ export class MemberList extends Component {
         }
         this.makeAdmin = this.makeAdmin.bind(this);
         this.removeAdmin = this.removeAdmin.bind(this);
+        this.controller = new AbortController();
+        this.signal = this.controller.signal;
     }
 
     makeAdmin(email) {
@@ -28,10 +30,15 @@ export class MemberList extends Component {
     }
     componentDidMount() {
         this.setState({ loading: true });
-        fetch("https://api.randomuser.me/?nat=US&results=12")
+        fetch("https://api.randomuser.me/?nat=US&results=12", {
+            method: 'get',
+            signal: this.signal
+        })
         .then(response => response.json())
         .then(json => json.results )
         .then ( members => {
+            // if component unmounted before fetch is done then,
+            //it creates a warning of cannot call setState
             this.setState(
                 {
                     members,
@@ -39,6 +46,14 @@ export class MemberList extends Component {
                 }
             )
         })
+        .catch(err => {
+            console.log("err",err);
+        })
+    }
+    componentWillUnmount() {
+        if(!this.signal.aborted){
+            this.controller.abort();
+        }
     }
     render() {
 
