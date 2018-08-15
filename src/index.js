@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { App } from './components/App'
 import { ErrorBoundary } from './components/ErrorBoundary'
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 window.React = React
 
