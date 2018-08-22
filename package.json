@@ -4,7 +4,8 @@
   "description": "react project from scratch",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server"
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "test": "jest"
   },
   "keywords": [
     "react",
@@ -29,6 +30,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
+    "jest": "^23.5.0",
     "node-sass": "^4.9.2",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.1.0",
