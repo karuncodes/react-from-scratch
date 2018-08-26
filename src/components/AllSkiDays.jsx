@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
 import { SkiDayList } from './SkiDayList'
 
-export class AllSkiDays extends Component {
+export class AllSkiDays extends React.Component {
     constructor(props) {
         super(props);
     }

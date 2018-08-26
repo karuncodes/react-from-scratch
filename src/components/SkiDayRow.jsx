@@ -1,6 +1,7 @@
 import  { MdTerrain as Pahaad }  from 'react-icons/md'
 import  { TiWeatherSnow as SnowFlake }  from 'react-icons/ti'
 import { PropTypes } from 'prop-types'
+import React from 'react'
 
 export const SkiDayRow = ({resort, date, powder, backcountry}) => (
 <tr>

@@ -1,3 +1,4 @@
+import React from 'react'
 import  { FaShieldAlt }  from 'react-icons/fa'
 
 export const Member = ({admin, name, image, email, makeAdmin, removeAdmin}) => (<div>

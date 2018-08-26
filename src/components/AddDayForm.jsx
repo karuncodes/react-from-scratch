@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 import { PropTypes } from 'prop-types'
 
 let resortInputElement,
@@ -14,7 +14,7 @@ const indianResorts = [
     "Tramp Stamp Granny",
     "MountView Hotel"
 ]
-class AutoComplete extends Component {
+class AutoComplete extends React.Component {
     get value() {
         return this.autoComp.value
     }

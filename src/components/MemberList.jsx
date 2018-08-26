@@ -1,8 +1,8 @@
-import { Component } from 'react'
+import React from 'react'
 import { Member } from './Member'
 import fetch from 'isomorphic-fetch'
 
-export class MemberList extends Component {
+export class MemberList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

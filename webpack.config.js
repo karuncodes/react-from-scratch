@@ -10,6 +10,9 @@ module.exports = {
         contentBase: './dist',
         historyApiFallback: true
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.scss']
+    },
     module: {
         rules: [
             {

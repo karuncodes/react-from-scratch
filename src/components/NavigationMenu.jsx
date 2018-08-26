@@ -1,10 +1,10 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import  {
     FaCalendar as Cal,
-    FaHome as Home,
-    FaTimesCircle as NotFound
+    FaHome as Home
 }  from 'react-icons/fa'
-import '../stylesheets/ui.scss'
+import '../stylesheets/ui'
 
 export const NavigationMenu = () => {
     const style={

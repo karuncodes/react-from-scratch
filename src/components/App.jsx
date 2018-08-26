@@ -1,4 +1,4 @@
-import { Fragment, Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { SkiDayCount } from './SkiDayCount'
 import { AllSkiDays } from './AllSkiDays'
 import { MemberList } from './MemberList'
